@@ -1,6 +1,9 @@
-**how to run it**
+## how to run it
+
 make
+
 ./program
 
-**how to stop executing**
+## how to stop executing
+
 enter a non-integer value
