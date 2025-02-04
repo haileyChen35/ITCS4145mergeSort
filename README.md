@@ -4,6 +4,6 @@ make
 
 ./program
 
-## how to stop executing
+## how to clean 
 
-enter a non-integer value
+make clean

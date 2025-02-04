@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 #include <vector>
 #include <random>
 
@@ -72,9 +72,9 @@ vector<int> generateArr(int size){
     return arr;
 }
 
-int main(){
+int main(int argc, char* argv[]){
 
-    while(true){
+   
 
     clock_t start, end;
     double time;
@@ -83,9 +83,13 @@ int main(){
 
 /** Ask for size input*/
 
-    cout<<"Enter the array size: ";
-    cin >> x;
-    cout<<"The array size is: "<< x <<endl;
+    if (argc < 2) {
+        cout << "Error: Please provide an integer as input!" << endl;
+        return 1;
+    }
+
+    x = stoi(argv[1]);
+    
 
     arr = generateArr(x);
 
@@ -97,10 +101,7 @@ int main(){
 
     time = (double)(end-start) / CLOCKS_PER_SEC;
 
-    cout << "execution time for an array size of " << arr.size() <<": ";
-    cout << time << " seconds" << endl;
-
-    }
+    cout << "size: " << arr.size() <<" time: " << time << " seconds" << endl;
 
     return 0;
 
