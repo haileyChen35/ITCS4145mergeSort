@@ -8,28 +8,24 @@ using namespace std;
 vector<int> merge(vector<int> a, vector<int>b){
     vector<int> c;
 
-    while(a.size() > 0 && b.size() > 0){
-        if(a[0] > b[0]){
-            c.push_back(b[0]);
-            b.erase(b.begin() + 0); // remove the element at index 0, remove a[0] from a 
-        }else{
-            c.push_back(a[0]);
-            a.erase(a.begin() + 0); // remove the element at index 0, remove b[0] from b
-        } 
+    int i = 0, j = 0;
+
+    while (i < a.size() && j < b.size()) {
+        if (a[i] > b[j]) {
+            c.push_back(b[j++]);
+        } else {
+            c.push_back(a[i++]);
+        }
     }
 
     // at this point either a or b is empty 
 
-    while(a.size() > 0){
-        c.push_back(a[0]);
-        a.erase(a.begin()+0); // remove a[0] from a 
+    while (i < a.size()) {
+        c.push_back(a[i++]);
     }
-
-    while(b.size() > 0){
-        c.push_back(b[0]);
-        b.erase(b.begin()+0); // remove b[0] from b
+    while (j < b.size()) {
+        c.push_back(b[j++]);
     }
-
     return c;
 }
 
@@ -38,14 +34,8 @@ vector<int> mergeSort(vector<int> a){
         return a;
     }
 
-    vector<int> arrayOne;
-    vector<int> arrayTwo;
-    for(int i = 0; i < a.size()/2; i++){
-        arrayOne.push_back(a[i]);
-    }
-    for(int i = a.size()/2; i<a.size();i++){
-        arrayTwo.push_back(a[i]);
-    }
+    vector<int> arrayOne(a.begin(), a.begin() + a.size() / 2);
+    vector<int> arrayTwo(a.begin() + a.size() / 2, a.end());
 
     arrayOne = mergeSort(arrayOne);
     arrayTwo = mergeSort(arrayTwo);
@@ -119,4 +109,6 @@ int main(int argc, char* argv[]){
     //     std::cout << arr[i] << " "; 
     // }  
 }
+
+
 
