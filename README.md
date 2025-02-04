@@ -2,7 +2,7 @@
 
 make
 
-./program
+./program size
 
 ## how to clean 
 
