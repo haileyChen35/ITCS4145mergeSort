@@ -5,31 +5,24 @@
 
 using namespace std;
 
-vector<int> merge(vector<int> a, vector<int>b){
+vector<int> merge(vector<int>& a, vector<int>& b) {
     vector<int> c;
+    c.reserve(a.size() + b.size());
 
     int i = 0, j = 0;
 
     while (i < a.size() && j < b.size()) {
-        if (a[i] > b[j]) {
-            c.push_back(b[j++]);
-        } else {
-            c.push_back(a[i++]);
-        }
+        c.push_back((a[i] <= b[j]) ? a[i++] : b[j++]);
     }
 
-    // at this point either a or b is empty 
+    c.insert(c.end(), a.begin() + i, a.end());
+    c.insert(c.end(), b.begin() + j, b.end());
 
-    while (i < a.size()) {
-        c.push_back(a[i++]);
-    }
-    while (j < b.size()) {
-        c.push_back(b[j++]);
-    }
-    return c;
+    return c; 
 }
 
-vector<int> mergeSort(vector<int> a){
+
+vector<int> mergeSort(vector<int>& a){
     if(a.size() == 1){
         return a;
     }

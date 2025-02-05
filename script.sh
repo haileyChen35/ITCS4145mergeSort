@@ -1,7 +1,10 @@
 #!/bin/bash
-#SBATCH --job-name=myjob
+#SBATCH --job-name=haileyC
 #SBATCH --partition=Centaurus
 #SBATCH --time=01:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem=16G
 
 ./program 10
 ./program 100
