@@ -16,6 +16,12 @@ make
 
 sbatch script.sh
 
+cat slurm-xxxx.out 
+
+## result
+
+cd ITCS4145mergeSort
+
 cat slurm-6733.out
 
 ## how to run python graphing 
