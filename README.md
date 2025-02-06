@@ -22,7 +22,7 @@ cat result.txt
 
 make plot
 
-## The name of plot image
+## generated image name
 
 myplot.png
 
