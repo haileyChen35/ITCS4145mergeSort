@@ -1,8 +1,6 @@
-## how to run it 
+## create an executable file named program
 
-make
-
-./program size
+make 
 
 ## how to clean 
 
@@ -16,7 +14,7 @@ make
 
 sbatch script.sh
  
-## result
+## where to get result
 
 cat result.txt
 
