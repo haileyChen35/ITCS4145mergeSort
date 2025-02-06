@@ -27,5 +27,6 @@ plt.xlabel("Size")
 plt.ylabel("Time (seconds)")
 plt.title("Benchmark of MergeSort")
 
+plt.savefig('myplot.png') 
 
 plt.show()
