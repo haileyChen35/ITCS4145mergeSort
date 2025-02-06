@@ -5,6 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=16G
+#SBATCH --output=result.txt
 
 ./program 10
 ./program 100

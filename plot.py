@@ -1,8 +1,20 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import re
 
-sizes = np.array([10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000])
-times = np.array([1.9e-05, 0.000147, 0.001535, 0.016352, 0.171602, 1.7903, 18.7148, 194.392, 2016.56])
+
+with open("result.txt", "r") as file:
+    data = file.readlines()
+
+
+sizes = []
+times = []
+
+for line in data:
+    match = re.search(r"size:\s*(\d+)\s*time:\s*([\d.e-]+)", line)
+    if match:
+        sizes.append(int(match.group(1)))  # Extract integer size
+        times.append(float(match.group(2)))  # Extract time as float
 
 plt.figure(figsize=(8, 5))
 plt.plot(sizes, times, marker='o', linestyle='-', color='blue')
