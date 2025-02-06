@@ -6,6 +6,10 @@ program: mergeSort.o
 mergeSort.o: mergeSort.cpp
 	g++ -std=c++11 -c mergeSort.cpp
 
+# plot
+plot: plot.py
+	python3 plot.py
+
 # clean
 clean:
 	rm *.o program
