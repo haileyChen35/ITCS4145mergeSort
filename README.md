@@ -22,9 +22,13 @@ cat result.txt
 
 make plot
 
-![Alt text](myplot.png)
+## The name of plot image
+
+myplot.png
 
 ## conclusion
+
+![Alt text](myplot.png)
 
 As the array size increases, merge sort takes longer to execute, and the times I get make sense as output follows the O(n log n) time complexity of merge sort
 
